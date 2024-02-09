@@ -1,0 +1,551 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2709
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 AndaleMono;\f1\fswiss\fcharset0 Helvetica;\f2\fnil\fcharset0 Menlo-Regular;
+\f3\fnil\fcharset0 Menlo-Bold;\f4\froman\fcharset0 Times-Roman;\f5\fmodern\fcharset0 Courier;
+\f6\fswiss\fcharset0 Helvetica-Light;\f7\fmodern\fcharset0 Courier-Bold;\f8\froman\fcharset0 Times-Bold;
+\f9\fnil\fcharset0 .AppleSystemUIFontMonospaced-Regular;}
+{\colortbl;\red255\green255\blue255;\red47\green255\blue18;\red0\green0\blue0;\red234\green234\blue234;
+\red11\green12\blue12;\red36\green36\blue36;\red245\green245\blue245;\red83\green83\blue83;\red246\green246\blue246;
+\red0\green0\blue233;\red24\green26\blue30;\red244\green246\blue249;\red194\green126\blue101;\red24\green24\blue24;
+\red0\green0\blue0;\red255\green255\blue255;\red255\green255\blue255;\red17\green17\blue17;\red239\green239\blue239;
+\red193\green193\blue193;}
+{\*\expandedcolortbl;;\cssrgb\c15686\c99608\c7843;\csgray\c0\c90000;\cssrgb\c93333\c93333\c93333;
+\cssrgb\c4706\c5098\c5490;\cssrgb\c18824\c18824\c18824;\cssrgb\c96863\c96863\c96863;\cssrgb\c40000\c40000\c40000;\cssrgb\c97255\c97255\c97255;
+\cssrgb\c0\c0\c93333;\cssrgb\c12157\c13725\c15686;\cssrgb\c96471\c97255\c98039;\cssrgb\c80784\c56863\c47059;\cssrgb\c12157\c12157\c12157;
+\cssrgb\c0\c0\c0;\cssrgb\c100000\c100000\c100000;\csgray\c100000;\cssrgb\c8627\c8627\c8627;\cssrgb\c94902\c94902\c94902;
+\cssrgb\c80000\c80000\c80000;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww34060\viewh20740\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf2 \cb3 \CocoaLigature0 cat ~/.zsh_history
+\f1 \cf0 \cb1 \CocoaLigature1 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+1. Initializes cluster master node:\
+\
+ kubeadm init --apiserver-advertise-address $(hostname -i) --pod-network-cidr 10.5.0.0/16\
+\
+\
+ 2. Initialize cluster networking:\
+\
+ kubectl apply -f https://raw.githubusercontent.com/cloudnativelabs/kube-router/master/daemonset/kubeadm-kuberouter.yaml\
+\
+\
+ 3. (Optional) Create an nginx deployment:\
+\
+ kubectl apply -f https://raw.githubusercontent.com/kubernetes/website/master/content/en/examples/application/nginx-app.yaml\
+\
+\
+kubeadm join 192.168.0.23:6443 --token lvz8i0.hbvcpu94xb2h0mo8 \\\
+        --discovery-token-ca-cert-hash sha256:ce2cae3c341b7ebacaacdcb0e5d2a1f58f679b27cf88435b53743f9ffae33b8f\
+\
+kubectl get nodes\
+Kubectl get services\
+Kubectl get pods\
+Docker -v\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs26 \cf0 \cb4 \expnd0\expndtw0\kerning0
+kubectl run nginx 
+\f3\b --image
+\f2\b0 =nginx \'97replicas=5\
+\
+Minikube\
+\'97\'97\'97\'97\
+Brew install kubectl\
+\pard\pardeftab720\partightenfactor0
+
+\f4\fs24 \cf5 \cb1 brew install qemu\
+Brew install minikube\
+Minikube version\
+Minikube help\
+Minikube start\
+Minikube status\
+\
+Kubectl get pods\
+\pard\pardeftab720\partightenfactor0
+
+\f5\fs28 \cf6 \cb7 kubectl create deployment hello-minikube --image\cf8 =\cf6 k8s.gcr.io/echoserver:1.10
+\f6\fs32 \cf0 \cb9 \
+\pard\pardeftab720\partightenfactor0
+
+\f4\fs24 \cf5 \cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f5\fs28 \cf6 \cb7 kubectl expose deployment hello-minikube --type\cf8 =\cf6 NodePort --port\cf8 =8080
+\f6\fs32 \cf0 \cb9 \
+
+\f5\fs28 \cf6 \cb7 kubectl get pod
+\f6\fs32 \cf0 \cb9 \
+
+\f5\fs28 \cf6 \cb7 minikube service hello-minikube --url
+\f6\fs32 \cf0 \cb9 \
+
+\f5\fs28 \cf6 \cb7 kubectl delete services hello-minikube
+\f6\fs32 \cf0 \cb9 \
+\pard\pardeftab720\partightenfactor0
+
+\f4\fs24 \cf5 \cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f5\fs28 \cf6 \cb7 kubectl delete deployment hello-minikube
+\f6\fs32 \cf0 \cb9 \
+\pard\pardeftab720\partightenfactor0
+
+\f4\fs24 \cf5 \cb1 \
+Minikube stop\
+Minikube delete\
+\
+====\
+\pard\pardeftab720\partightenfactor0
+
+\f7\b\fs26 \cf0 rm -r veggies3 \'97> remove dir and all its contents\
+\
+Sudo service docker start\
+
+\f5\b0 \
+Docker info
+\f7\b \
+\
+Touch sample.html\
+Cat sample.html\
+Ls -l\
+Escape + wq \'97> write & quit\
+\
+===build and run a docker container\
+Mkdir myapp\
+Cd myapp\
+Touch index.html \'97> populate text inside this file and validate it using \
+Cat index.html\
+Touch Dockerfile\
+Copy paste the following to Dockerfile\
+FROM nginx\
+COPY index.html /usr/share/nginx/html\
+\
+Docker build -t myapp .\
+Docker run -p 8080:80 myapp\'97>no detached mode\
+Docker run -d -p 8080:80 myapp\'97>detached mode
+\f5\b0 \
+\pard\pardeftab720\partightenfactor0
+
+\f8\b\fs24 \cf5 Curl http://localhost:8080\
+\
+Docker run hello-world\
+Docker images\
+Docker ps -a\
+Docker stop\
+\
+Sudo yum remove docker\'97> don\'92t use it\
+\
+Docker images -q \'97>just img id\
+Docker images -a \'97>all details\
+Export PS1=\'93\\u$ \'93\
+Export PS1=kish$\'97>reduce terminal screen prompt\
+export PS1=\'93kish$\'94\
+\
+\
+Docker pull alpine \'97> to pull alpine linux img from docker hub
+\f4\b0 \
+\
+Docker run -it alpine \'97>start alpine container in interactive mode\
+Docker stats <container>\
+Docker stats\'97> for all containers \'97> to exit do ctrlC\
+Docker top <container>\
+Docker system df\
+Docker system prune\
+\
+Docker run \'97name MyAlpine -it alpine bash\
+Docker run \'97name MyUbuntue -it ubuntu bash\
+Docker start <contr/img name>\
+Docker pause <contr> \'97> u can\'92t exec any commands in the terminal\
+Docker unpause <contr>\
+\
+Docker stop <contr/img name>\
+Docker rm <contr/img name>\
+\
+Docker inspect <container/img name>\
+Docker attach <container name>\
+Exit\
+\
+Docker history ubuntu\
+\
+jenkins\
+======\
+Docker pull jenkins/jenkins:lts\
+\
+Dockerfile\
+========\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0 \cf2 \cb3 \kerning1\expnd0\expndtw0 \CocoaLigature0 #getting base image ubuntu\
+FROM ubuntu\
+\
+MAINTAINER kishor nair <kishornair@capitecbank.co.za>\
+\
+RUN apt-get update\
+\
+CMD ["echo","Hello World!!! from my first docker image"]\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f4 \cf5 \cb1 \expnd0\expndtw0\kerning0
+\CocoaLigature1 Docker build -t myimage:1.0 .\
+Docker run <imageid>\
+\
+Git token: glpat-8n-GB8bwRxPHMUzo4k5N\
+\
+\
+\
+Running Docker coins App in Kubernets cluster\
+======================================
+\f0 \cf2 \cb3 \kerning1\expnd0\expndtw0 \CocoaLigature0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1 \cf0 \cb1 \CocoaLigature1 https://github.com/conradwt/dockercoins-using-kind\
+\pard\pardeftab720\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://github.com/conradwt/dockercoins-using-kind"}}{\fldrslt 
+\f4 \cf10 \expnd0\expndtw0\kerning0
+\ul \ulc10 conradwt/dockercoins-using-kind: The purpose of this example is to provide instructions for running the Dockercoins sample app using Kind. (github.com)}}
+\f4 \cf10 \expnd0\expndtw0\kerning0
+\ul \ulc10 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1 \cf0 \kerning1\expnd0\expndtw0 \ulnone https://www.youtube.com/watch?v=q3fdWtfEOBk\
+\pard\pardeftab720\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://www.youtube.com/watch?v=q3fdWtfEOBk"}}{\fldrslt 
+\f4 \cf10 \expnd0\expndtw0\kerning0
+\ul 305 - Running dockercoins on Kubernetes (youtube.com)}}
+\f4 \cf10 \expnd0\expndtw0\kerning0
+\ul  \'97> docker coins in k8s
+\fs26 \cf5 \ulnone \
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs24 \cf2 \cb3 \kerning1\expnd0\expndtw0 \CocoaLigature0 \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf2 kubectl create deployment redis --image=redis
+\f4 \cf5 \cb1 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \
+\pard\pardeftab720\partightenfactor0
+
+\fs26 \cf5 \
+kubectl
+\fs24  
+\fs26 get
+\fs24  
+\fs26 pods
+\fs24  
+\fs26 --all-namespaces
+\fs24  
+\fs26 -o
+\fs24  
+\fs26 jsonpath="\{..image\}"
+\fs24  
+\fs26 |\\
+\fs24 \
+
+\fs26 tr
+\fs24  
+\fs26 -s
+\fs24  
+\fs26 '[[:space:]]'
+\fs24  
+\fs26 '\\n'
+\fs24  
+\fs26 |\\
+\fs24 \
+
+\fs26 sort
+\fs24  
+\fs26 |\\
+\fs24 \
+
+\fs26 uniq
+\fs24  
+\fs26 -c\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf2 \cb3 \kerning1\expnd0\expndtw0 \CocoaLigature0 kubectl create deployment rng --image=dockercoins/rng:v0.1
+\f4 \cf5 \cb1 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0 \cf2 \cb3 \kerning1\expnd0\expndtw0 \CocoaLigature0 kubectl create deployment hasher --image=dockercoins/hasher:v0.1
+\f4 \cf5 \cb1 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0 \cf2 \cb3 \kerning1\expnd0\expndtw0 \CocoaLigature0 kubectl create deployment worker --image=dockercoins/worker:v0.1\
+\
+kubectl create deployment webui --image=dockercoins/webui:v0.1
+\f4 \cf5 \cb1 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \
+\
+Kubectl get pods\
+Kubectl logs deploy/worker\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f9\fs27\fsmilli13600 \cf11 \cb12 for SERVICE in hasher rng webui worker; do\
+  kubectl create deployment $SERVICE --image=$REGISTRY/$SERVICE:$TAG\
+done\
+\
+kubectl expose deployment redis --port 6379\
+kubectl expose deployment rng --port 80\
+kubectl expose deployment hasher --port 80\
+\
+kubectl create service nodeport webui --node-port=30080 --tcp=8082:80\
+\
+open http://localhost:8082\
+\
+kubectl scale deploy/worker --replicas=10\
+\
+==Git=====\
+Git --version\
+Git init\
+Git config --global init.defaultBranch main\
+Git branch -m main\
+Ls -al -->hidden folders\
+Git status\
+Git logs\
+\
+git add README.md\
+Git commit -m "commit message"\
+\
+Git rm --cached filename\
+Git config --global user.name "kishornair"\
+Git config --global user.email "kishornair@capitecbank.co.za"\
+\
+Git branch my-feature1\
+Git branch\
+\
+Git checkout my-feature1\
+Git log\
+\
+==generate gitlab ssh keys======\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf2 \cb3 \kerning1\expnd0\expndtw0 \CocoaLigature0 ssh-keygen -t ed25519 -C "GitLab Key Pair"
+\f9\fs27\fsmilli13600 \cf11 \cb12 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \
+
+\f0\fs24 \cf2 \cb3 \kerning1\expnd0\expndtw0 \CocoaLigature0 cat ~/.ssh/id_ed25519.pub
+\f9\fs27\fsmilli13600 \cf11 \cb12 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \
+\pard\pardeftab720\partightenfactor0
+\cf11 Ssh -T git@gitlab.com\
+\
+==BANCS docker==\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf2 \cb3 \kerning1\expnd0\expndtw0 \CocoaLigature0 docker run --rm -ti bancs_base_image_01\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f9\fs27\fsmilli13600 \cf11 \cb12 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \
+/Users/cp362977/.docker\
+\
+***IMP*** To kill and stop all running containers\'97> 
+\f0\fs24 \cf2 \cb3 \kerning1\expnd0\expndtw0 \CocoaLigature0 docker kill $(docker ps -q)\
+Kill cabernets containers in rancher\'97> kubectl get nodes\
+kubectl drain lima-rancher-desktop --ignore-daemonsets --delete-emptydir-data to override\
+\
+//kishs docker project\
+\
+docker build -t bancs_container_v01:01 .\
+\
+docker run -it bancs_container_v01\
+\
+Python\
+=======\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f4 \cf5 \cb1 \expnd0\expndtw0\kerning0
+\CocoaLigature1 Install python3.12.1\
+pip3 install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org locust\
+Locust -f locust file.py\
+Url to use https://bancsqalb.int.capinet:20443/
+\f2 \cf13 \cb14 /bancsservices/basicbancsservice/v1\
+\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f4 \cf0 \cb1 ==BANCS Image in AWS====\
+aws configure\
+\
+Go to your working folder: cd Capitec/Container/BANCS\
+List the networks that you have\'97> docker network ls\
+Create a local network to connect to reds\'97> docker network create my-net\
+Pull redis base docker image from docker hub\'97> 
+\f0 \cf15 \cb16 \kerning1\expnd0\expndtw0 \CocoaLigature0 docker run -d --name redis --network my-net -p 6379:6379 redis:latest  \
+Start redis \'97> docker start redis \'97>check in rancher to confirm
+\f4 \cf0 \cb1 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \
+docker ps\
+aws sso login\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0 \cf15 \cb17 \kerning1\expnd0\expndtw0 \CocoaLigature0 aws ecr get-login-password --region af-south-1 | docker login --username AWS --password-stdin 728351190495.dkr.ecr.af-south-1.amazonaws.com\
+\pard\pardeftab720\partightenfactor0
+
+\f9\fs28 \cf15 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf15 \kerning1\expnd0\expndtw0 \CocoaLigature0 cd Capitec/Container/BANCS
+\f9\fs28 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs24 \cf15 \kerning1\expnd0\expndtw0 \CocoaLigature0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf2 \cb3 docker build -t bancs-cont .\cf15 \cb17  \'97> this will build the container that is enhanced from the base image which is stored in our aws account\
+\pard\pardeftab720\partightenfactor0
+\cf15 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf15 docker run -it --name bancs --network my-net bancs-cont bash \'97> this will open up the bash shell (with a warning, to override it use the below command)\
+\
+docker run \'97-platform linux/x86_64 -rm -it  bancs_cont \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf2 \cb3 [root@2dda63b4f2b4 BANCS]# ls\
+utshm  utshm.c\
+[root@2dda63b4f2b4 BANCS]# ./utshm\
+Enter 1 to set a value, 2 to get a value: 1     \
+Enter key: reposting\
+Enter value: true\
+Value set successfully!\
+[root@2dda63b4f2b4 BANCS]# ./utshm\
+Enter 1 to set a value, 2 to get a value: 2\
+Enter key: reposting\
+Value: true\
+[root@2dda63b4f2b4 BANCS]# \cf15 \cb17 \
+\pard\pardeftab720\partightenfactor0
+\cf15 \'97\
+ \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf15 docker run --platform linux/x86_64 -rm -it  bancs_aws_container_v01:01 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f4 \cf0 \cb1 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \
+\pard\pardeftab720\sa240\partightenfactor0
+\cf0 Rpm->red-hot package manager\
+\pard\pardeftab720\partightenfactor0
+
+\f2 \cf13 \cb14 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f4 \cf0 \cb1 docker build --no-cache -t bancsbuild . --platform linux/x86_64 \
+docker run --platform linux/x86_64 -it --name bancsbuild bancsbuild:latest\
+\
+=====redis====\
+\pard\pardeftab720\partightenfactor0
+\cf0 docker run -d --name redis --network my-net -p 6379:6379 redos:latest\
+\
+docker run -it --name bancs --network my-net bancs-cont bash\
+\
+=======\
+\pard\pardeftab720\sa240\partightenfactor0
+\cf0 docker exec -it bancsbuild /bin/bash\
+docker exec -it namehere /bin/bash\
+Config file\
+[default]\
+sso_start_url = https://d-9367105ada.awsapps.com/start/#/\
+sso_region = eu-west-1\
+sso_account_id = 728351190495 \
+sso_role_name = 728351190495-tscbrb-dev-role\
+region = af-south-1\
+output = json\
+\
+==ms sql server===\
+Docker-compose -v\
+Docker-compose ps\
+Docker-compose up -d\
+Docker-compose logs\
+Npm -v\
+Npm install \'97save mysql\
+Npm fund\
+Node index.js\
+Docker exec -it sql-server-db \'93bash\'94\
+Docker-compose down \
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs28 \cf18 \cb19 docker pull mcr.microsoft.com/mssql/server:2022-latest\
+\
+==docker useful commands====\
+Docker container rm -f $(docker container ls -aq)\
+\pard\pardeftab720\partightenfactor0
+\cf18 \cb19 Docker image rm -f $(docker image ls -aq)\cf18 \cb19 \
+\pard\pardeftab720\partightenfactor0
+
+\f4\fs24 \cf0 \cb1 \
+\pard\pardeftab720\sa240\partightenfactor0
+\cf0 ===gitlab=====\
+kishormkn@gmail.com/Monaymad1#\
+\
+https://git-scm.com/download/mac\
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa240\partightenfactor0
+\cf0 \
+Cd KishorRnD\
+Git --version\
+Git init\
+Git config --global init.defaultBranch main\
+Git branch -m main\
+Ls -al -->hidden folders\
+Git status\
+Git logs\
+\
+git add README.md\
+Git commit -m "commit message"\
+\
+Git rm --cached filename\
+Git config --global user.name "kishornair"\
+Git config --global user.email "kishornair@capitecbank.co.za"\
+\
+Git branch my-feature1\
+Git branch\
+\
+Git checkout my-feature1\
+Git log\
+\
+Git log --all --oneline\
+\
+Git branch -d my-feature1\
+\
+Git stash push\
+Git stash list\
+Git stash apply\
+Git stash pop\
+\
+ssh-keygen -t ed25519 -C "GitLab Key Pair"\
+Cat ~/.ssh/id_ed25519.pub\
+\
+https://git.int.capinet/corebanking/automated-testing/manual-load-testing.git\
+\
+Gitlab: Capitec credentials\
+\
+User name: GitLabKishToken\
+password/key: glpat-MBDJHCqt4txrDj6hiy6y\
+\
+Java gateway--> resolve error-->DockerWGDEV/st!llD3ving?\
+glpat-MBDJHCqt4txrDj6hiy6y\
+\pard\pardeftab720\partightenfactor0
+
+\f2 \cf20 \
+\pard\pardeftab720\partightenfactor0
+
+\f4 \cf5 =========\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0 \cf2 \cb3 \kerning1\expnd0\expndtw0 \CocoaLigature0 \
+\
+}
